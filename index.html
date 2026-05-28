@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================
+     SEO / META
+     ============================================================ -->
+<title>Adenice Araújo | Advogada Tributarista</title>
+<meta name="description" content="Advogada tributarista. Defesa em execução fiscal, planejamento tributário, recuperação de créditos e isenção de IR por doença grave. Atendimento em São Paulo e todo o Brasil." />
+<meta name="keywords" content="advogada tributarista, defesa execução fiscal, planejamento tributário, recuperação de créditos, isenção imposto de renda doença grave, transação tributária" />
+<meta property="og:title" content="Adenice Araújo | Advogada Tributarista" />
+<meta property="og:description" content="Defesa estratégica em direito tributário. Reduza sua carga tributária e recupere o que é seu por direito." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   CONFIG — VARIÁVEIS WHITE-LABEL
+   Altere aqui para reaproveitar o template em outro cliente.
+   ============================================================ */
+:root{
+  /* Paleta — tons de verde */
+  --green-900:#0d2818;   /* verde profundo (fundo escuro)  */
+  --green-800:#143a23;
+  --green-700:#1c5236;
+  --green-600:#23694a;
+  --green-500:#2f8a63;   /* verde principal / marca        */
+  --green-400:#4caf83;
+  --green-300:#7fcaa6;
+  --gold:#c9a14a;        /* acento dourado discreto         */
+  --cream:#f5f3ec;       /* fundo claro                     */
+  --paper:#fbfaf6;
+  --ink:#16241d;         /* texto sobre claro               */
+  --ink-soft:#4a5a52;
+  --line:rgba(20,58,35,.12);
+
+  /* Tipografia */
+  --font-display:'Fraunces', Georgia, serif;
+  --font-body:'Manrope', system-ui, sans-serif;
+
+  /* Layout */
+  --max:1180px;
+  --radius:18px;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section{position:relative}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* utilidades */
+.eyebrow{
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:600;color:var(--green-500);margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+h2.title{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.1;
+  letter-spacing:-.01em;max-width:760px;
+}
+.lead{color:var(--ink-soft);max-width:640px;margin-top:18px;font-size:1.05rem}
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 0;transition:.3s;
+}
+header.scrolled{
+  background:rgba(251,250,246,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  padding:12px 0;
+}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:600;color:#fff;transition:.3s}
+header.scrolled .brand{color:var(--green-900)}
+.brand .mark{
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;font-weight:700;
+  background:var(--green-500);color:#fff;font-family:var(--font-display);
+  border:1px solid rgba(255,255,255,.25);flex:none;
+}
+.brand small{display:block;font-family:var(--font-body);font-weight:500;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.92rem;font-weight:500;color:rgba(255,255,255,.85);transition:.2s}
+header.scrolled .nav-links a{color:var(--ink-soft)}
+.nav-links a:hover{color:var(--gold)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-weight:600;font-size:.9rem;
+  background:var(--green-500);color:#fff;transition:.25s;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn:hover{background:var(--green-600);transform:translateY(-2px)}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
+header.scrolled .btn.ghost{border-color:var(--line);color:var(--green-700)}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;color:#fff;font-size:1.6rem}
+header.scrolled .menu-toggle{color:var(--green-900)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(76,175,131,.25), transparent 60%),
+    linear-gradient(160deg, var(--green-900), var(--green-800) 55%, var(--green-700));
+  color:#fff;overflow:hidden;padding:120px 0 60px;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;
+  background-image:radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size:26px 26px;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero .eyebrow{color:var(--green-300)}
+.hero .eyebrow::before{background:var(--gold)}
+.hero h1{
+  font-family:var(--font-display);font-weight:500;
+  font-size:clamp(2.4rem,5.5vw,4.3rem);line-height:1.04;letter-spacing:-.02em;
+}
+.hero h1 em{font-style:italic;color:var(--green-300)}
+.hero p.sub{margin-top:24px;font-size:1.12rem;color:rgba(255,255,255,.82);max-width:520px}
+.hero-cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
+.hero-photo{
+  aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;
+  background:linear-gradient(160deg,var(--green-700),var(--green-600));
+  border:1px solid rgba(255,255,255,.14);
+  display:grid;place-items:center;text-align:center;
+  position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+}
+.hero-photo span{color:rgba(255,255,255,.5);font-size:.85rem;letter-spacing:.1em;padding:0 20px}
+.hero-photo::before{content:"⚖";font-size:3rem;position:absolute;top:24px;left:24px;opacity:.25}
+
+/* faixa de números */
+.stats{
+  position:relative;z-index:2;margin-top:64px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  border-top:1px solid rgba(255,255,255,.15);padding-top:30px;
+}
+.stat .num{font-family:var(--font-display);font-size:2.2rem;font-weight:600;color:var(--green-300)}
+.stat .lbl{font-size:.85rem;color:rgba(255,255,255,.7);margin-top:4px}
+
+/* ============================================================
+   SITUAÇÕES (problemas)
+   ============================================================ */
+.section{padding:100px 0}
+#problems{background:var(--cream)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;transition:.3s;position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--green-500);transform:scaleY(0);transform-origin:top;transition:.3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 24px 40px -24px rgba(20,58,35,.35)}
+.card:hover::before{transform:scaleY(1)}
+.card h3{font-family:var(--font-display);font-size:1.18rem;font-weight:600;margin-bottom:10px}
+.card p{color:var(--ink-soft);font-size:.96rem}
+.card .ico{font-size:1.5rem;margin-bottom:16px;display:block}
+
+/* ============================================================
+   SERVIÇOS
+   ============================================================ */
+#services{background:var(--green-900);color:#fff}
+#services .eyebrow{color:var(--green-300)}
+#services h2.title{color:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:54px}
+.svc{
+  border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:32px;
+  background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,0));
+  transition:.3s;
+}
+.svc:hover{border-color:var(--green-400);background:rgba(76,175,131,.08)}
+.svc h3{font-family:var(--font-display);font-size:1.35rem;font-weight:600;margin-bottom:12px}
+.svc p{color:rgba(255,255,255,.74);font-size:.98rem}
+.svc .tag{
+  display:inline-block;margin-top:18px;font-size:.74rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,161,74,.4);
+  padding:5px 12px;border-radius:999px;
+}
+
+/* ============================================================
+   DIFERENCIAIS
+   ============================================================ */
+#why{background:var(--paper)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 50px;margin-top:54px}
+.why-item{display:flex;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
+.why-item .rn{
+  font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--green-500);
+  width:42px;height:42px;border:1px solid var(--green-500);border-radius:50%;
+  display:grid;place-items:center;flex:none;
+}
+.why-item h4{font-family:var(--font-display);font-size:1.12rem;font-weight:600;margin-bottom:6px}
+.why-item p{color:var(--ink-soft);font-size:.95rem}
+
+/* ============================================================
+   SOBRE
+   ============================================================ */
+#about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.about-photo{
+  aspect-ratio:3/4;border-radius:var(--radius);
+  background:linear-gradient(160deg,var(--green-600),var(--green-800));
+  display:grid;place-items:center;color:rgba(255,255,255,.55);text-align:center;
+  border:1px solid var(--line);font-size:.85rem;letter-spacing:.1em;padding:20px;
+  box-shadow:0 30px 60px -30px rgba(20,58,35,.5);
+}
+.about-text h2.title{margin-bottom:24px}
+.about-text p{color:var(--ink-soft);margin-bottom:16px}
+.about-creds{list-style:none;margin:24px 0;display:grid;gap:12px}
+.about-creds li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem}
+.about-creds li::before{content:"✓";color:var(--green-500);font-weight:700}
+.about-social{display:flex;gap:14px;margin-top:8px}
+.about-social a{
+  font-size:.88rem;font-weight:600;color:var(--green-700);
+  border:1px solid var(--line);padding:8px 16px;border-radius:999px;transition:.2s;
+}
+.about-social a:hover{background:var(--green-500);color:#fff;border-color:var(--green-500)}
+
+/* ============================================================
+   CONTATO / LOCALIZAÇÃO
+   ============================================================ */
+#contact{background:var(--green-900);color:#fff}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:54px}
+#contact .eyebrow{color:var(--green-300)}
+#contact h2.title{color:#fff}
+.contact-item h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-300);margin-bottom:10px}
+.contact-item p,.contact-item a{color:rgba(255,255,255,.85);font-size:1rem}
+.contact-item a:hover{color:var(--gold)}
+.contact-cta{
+  margin-top:60px;text-align:center;padding:50px 24px;
+  border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);
+  background:linear-gradient(160deg,rgba(76,175,131,.12),transparent);
+}
+.contact-cta h3{font-family:var(--font-display);font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:600;margin-bottom:14px}
+.contact-cta p{color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 26px}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:.88rem}
+.foot-links{display:flex;gap:22px}
+.foot-links a:hover{color:var(--gold)}
+
+/* botão flutuante whatsapp */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:200;
+  width:58px;height:58px;border-radius:50%;background:#25d366;
+  display:grid;place-items:center;color:#fff;font-size:1.7rem;
+  box-shadow:0 12px 28px -8px rgba(0,0,0,.5);transition:.25s;
+}
+.wa-float:hover{transform:scale(1.08)}
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-photo{max-width:340px;margin:0 auto}
+  .cards,.svc-grid,.why-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-photo{max-width:360px;margin:0 auto}
+  .contact-grid{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:1fr;gap:24px}
+  .nav-links{
+    position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
+    background:var(--green-900);flex-direction:column;justify-content:center;
+    gap:28px;transform:translateX(100%);transition:.3s;padding:40px;
+  }
+  .nav-links.open{transform:none}
+  .nav-links a{color:#fff;font-size:1.1rem}
+  .menu-toggle{display:block}
+  header.scrolled .menu-toggle{color:var(--green-900)}
+}
+@media(max-width:560px){
+  .contact-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <span class="mark">A</span>
+      <span>Adenice Araújo<small>Advogada Tributarista</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#problems">Situações</a>
+      <a href="#services">Serviços</a>
+      <a href="#why">Diferenciais</a>
+      <a href="#about">Sobre</a>
+      <a href="#contact">Contato</a>
+      <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">Fale comigo</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow reveal">Advocacia Tributária</span>
+        <h1 class="reveal">Pague menos imposto e <em>recupere</em> o que é seu por direito.</h1>
+        <p class="sub reveal">Defesa estratégica em execução fiscal, planejamento tributário e recuperação de créditos. Atendimento em São Paulo e em todo o Brasil.</p>
+        <div class="hero-cta reveal">
+          <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">Analisar meu caso →</a>
+          <a href="#services" class="btn ghost">Ver áreas de atuação</a>
+        </div>
+      </div>
+
+      <!-- ESPAÇO RESERVADO PARA FOTO -->
+      <div class="hero-photo reveal">
+        <span>Foto da<br>Dra. Adenice Araújo<br><br>(espaço reservado)</span>
+      </div>
+    </div>
+
+    <!-- números -->
+    <div class="stats">
+      <div class="stat reveal"><div class="num">7</div><div class="lbl">áreas de atuação tributária</div></div>
+      <div class="stat reveal"><div class="num">100%</div><div class="lbl">foco em direito tributário</div></div>
+      <div class="stat reveal"><div class="num">BR</div><div class="lbl">atendimento em todo o Brasil</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SITUAÇÕES
+     ============================================================ -->
+<section class="section" id="problems">
+  <div class="wrap">
+    <span class="eyebrow reveal">Quando procurar uma tributarista</span>
+    <h2 class="title reveal">Situações que ainda têm solução jurídica</h2>
+    <p class="lead reveal">Muitos contribuintes pagam impostos indevidos ou aceitam cobranças sem saber que têm direito de contestar, parcelar ou recuperar valores. Identificar a saída legal no tempo certo faz toda a diferença.</p>
+
+    <div class="cards">
+      <div class="card reveal"><span class="ico">⚖️</span><h3>Execução fiscal em andamento</h3><p>A Fazenda ajuizou cobrança e há risco de penhora de bens. É possível apresentar defesa, embargos e suspender a exigência.</p></div>
+      <div class="card reveal"><span class="ico">💸</span><h3>Carga tributária elevada</h3><p>Sua empresa paga mais imposto do que deveria por falta de um regime ou planejamento adequado à sua realidade.</p></div>
+      <div class="card reveal"><span class="ico">🔁</span><h3>Créditos a recuperar</h3><p>Tributos pagos a maior ou indevidamente nos últimos anos podem ser recuperados administrativa ou judicialmente.</p></div>
+      <div class="card reveal"><span class="ico">🩺</span><h3>Doença grave e Imposto de Renda</h3><p>Portadores de determinadas doenças têm direito à isenção do IR sobre aposentadoria e pensão — inclusive valores retroativos.</p></div>
+      <div class="card reveal"><span class="ico">🤝</span><h3>Dívida tributária acumulada</h3><p>Débitos com a Receita ou a Fazenda podem ser renegociados via transação tributária, com redução de juros e multas.</p></div>
+      <div class="card reveal"><span class="ico">📊</span><h3>Passivo desorganizado</h3><p>Falta de controle sobre o passivo fiscal gera autuações e surpresas. A gestão correta antecipa riscos e reduz custos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVIÇOS
+     ============================================================ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <span class="eyebrow reveal">Áreas de atuação</span>
+    <h2 class="title reveal">Atuação completa em direito tributário</h2>
+
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <h3>Defesa em Execução Fiscal</h3>
+        <p>Atuação técnica em cobranças da Fazenda Pública: embargos à execução, exceção de pré-executividade e medidas para suspender a exigibilidade e proteger o patrimônio.</p>
+        <span class="tag">Defesa judicial</span>
+      </div>
+      <div class="svc reveal">
+        <h3>Planejamento Tributário</h3>
+        <p>Estruturação lícita para reduzir a carga tributária da empresa, escolhendo o regime mais vantajoso e organizando operações de forma eficiente e segura.</p>
+        <span class="tag">Estratégia preventiva</span>
+      </div>
+      <div class="svc reveal">
+        <h3>Recuperação de Créditos</h3>
+        <p>Levantamento e recuperação de tributos pagos a maior ou indevidamente, por via administrativa ou judicial, com aproveitamento de valores retroativos.</p>
+        <span class="tag">Recuperação de valores</span>
+      </div>
+      <div class="svc reveal">
+        <h3>Isenção de IR por Doença Grave</h3>
+        <p>Obtenção da isenção do Imposto de Renda sobre aposentadoria e pensão para portadores de doenças previstas em lei, incluindo a restituição de valores já pagos.</p>
+        <span class="tag">Direito do contribuinte</span>
+      </div>
+      <div class="svc reveal">
+        <h3>Transação Tributária</h3>
+        <p>Negociação de débitos fiscais com a Fazenda por meio de transação, buscando descontos, prazos estendidos e condições compatíveis com a capacidade de pagamento.</p>
+        <span class="tag">Renegociação de dívidas</span>
+      </div>
+      <div class="svc reveal">
+        <h3>Gestão de Passivo &amp; Consultoria</h3>
+        <p>Acompanhamento contínuo do passivo tributário e consultoria preventiva para empresas e pessoas físicas, antecipando riscos e orientando decisões.</p>
+        <span class="tag">Assessoria contínua</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIFERENCIAIS
+     ============================================================ -->
+<section class="section" id="why">
+  <div class="wrap">
+    <span class="eyebrow reveal">Por que escolher</span>
+    <h2 class="title reveal">Uma advocacia próxima, técnica e estratégica</h2>
+
+    <div class="why-grid">
+      <div class="why-item reveal"><span class="rn">I</span><div><h4>Foco exclusivo em direito tributário</h4><p>Atuação especializada na matéria fiscal, o que se reflete diretamente na profundidade e na qualidade de cada defesa.</p></div></div>
+      <div class="why-item reveal"><span class="rn">II</span><div><h4>Análise honesta antes de agir</h4><p>Você recebe um parecer claro sobre as perspectivas reais do seu caso antes de qualquer medida judicial ou administrativa.</p></div></div>
+      <div class="why-item reveal"><span class="rn">III</span><div><h4>Atendimento em todo o Brasil</h4><p>Atuação remota e presencial, acompanhando processos administrativos e judiciais em diferentes esferas e estados.</p></div></div>
+      <div class="why-item reveal"><span class="rn">IV</span><div><h4>Estratégia voltada a resultado</h4><p>Cada medida é pensada para reduzir custos, recuperar valores e proteger o patrimônio do cliente.</p></div></div>
+      <div class="why-item reveal"><span class="rn">V</span><div><h4>Comunicação clara e acessível</h4><p>Sem juridiquês desnecessário: você entende cada etapa do processo e participa das decisões importantes.</p></div></div>
+      <div class="why-item reveal"><span class="rn">VI</span><div><h4>Atendimento personalizado</h4><p>Cada caso é tratado de forma individual, com atenção às particularidades do contribuinte e do seu cenário fiscal.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOBRE
+     ============================================================ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <!-- ESPAÇO RESERVADO PARA FOTO -->
+      <div class="about-photo reveal">Foto da Dra. Adenice Araújo<br>(espaço reservado)</div>
+
+      <div class="about-text">
+        <span class="eyebrow reveal">A advogada</span>
+        <h2 class="title reveal">Adenice Araújo</h2>
+        <p class="reveal">Advogada dedicada ao direito tributário, atua na defesa de empresas e pessoas físicas diante do Fisco, unindo rigor técnico e uma visão prática voltada a resultados concretos.</p>
+        <p class="reveal">O trabalho combina atuação judicial e administrativa com orientação preventiva, sempre com o objetivo de reduzir a carga tributária, recuperar valores e proteger o patrimônio de cada cliente.</p>
+        <ul class="about-creds reveal">
+          <li>Atuação especializada em direito tributário</li>
+          <li>Defesa em execução fiscal e contencioso tributário</li>
+          <li>Planejamento e consultoria para empresas e pessoas físicas</li>
+          <li>Atendimento em São Paulo e em todo o Brasil</li>
+        </ul>
+        <div class="about-social reveal">
+          <a href="https://www.instagram.com/advogada.adenicearaujo" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/in/adenicearaújo-advtributarista/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTATO
+     ============================================================ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal">Contato</span>
+    <h2 class="title reveal">Vamos analisar o seu caso</h2>
+
+    <div class="contact-grid">
+      <div class="contact-item reveal">
+        <h4>WhatsApp</h4>
+        <p><a href="https://wa.me/5511973673304" target="_blank" rel="noopener">+55 11 97367-3304</a></p>
+      </div>
+      <div class="contact-item reveal">
+        <h4>E-mail</h4>
+        <p><a href="mailto:denalvesaraujo@gmail.com">denalvesaraujo@gmail.com</a></p>
+      </div>
+      <div class="contact-item reveal">
+        <h4>Localização</h4>
+        <p>São Paulo, SP<br>Atendimento em todo o Brasil</p>
+      </div>
+      <div class="contact-item reveal">
+        <h4>Redes</h4>
+        <p>
+          <a href="https://www.instagram.com/advogada.adenicearaujo" target="_blank" rel="noopener">@advogada.adenicearaujo</a><br>
+          <a href="https://www.linkedin.com/in/adenicearaújo-advtributarista/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="contact-cta reveal">
+      <h3>Tem uma dúvida ou cobrança do Fisco?</h3>
+      <p>Envie uma mensagem e receba uma primeira avaliação do seu caso. Quanto antes você agir, maiores as chances de reverter ou reduzir o que está sendo cobrado.</p>
+      <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year"></span> Adenice Araújo — Advogada Tributarista.</span>
+    <div class="foot-links">
+      <a href="#services">Serviços</a>
+      <a href="#about">Sobre</a>
+      <a href="#contact">Contato</a>
+      <a href="https://www.instagram.com/advogada.adenicearaujo" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante -->
+<a class="wa-float" href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script>
+  // header com fundo ao rolar
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // menu mobile
+  const toggle = document.getElementById('menuToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, { threshold:.12 });
+  document.querySelectorAll('.reveal').forEach((el,i) => {
+    el.style.transitionDelay = (i % 6 * 0.06) + 's';
+    io.observe(el);
+  });
+
+  // ano automático no rodapé
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
