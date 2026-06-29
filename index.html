@@ -10,40 +10,44 @@
 <title>Adenice Araújo | Advogada Tributarista</title>
 <meta name="description" content="Advogada tributarista. Defesa em execução fiscal, planejamento tributário, recuperação de créditos e isenção de IR por doença grave. Atendimento em São Paulo e todo o Brasil." />
 <meta name="keywords" content="advogada tributarista, defesa execução fiscal, planejamento tributário, recuperação de créditos, isenção imposto de renda doença grave, transação tributária" />
+<meta name="theme-color" content="#0d2818" />
 <meta property="og:title" content="Adenice Araújo | Advogada Tributarista" />
 <meta property="og:description" content="Defesa estratégica em direito tributário. Reduza sua carga tributária e recupere o que é seu por direito." />
 <meta property="og:type" content="website" />
+<meta property="og:image" content="assets/adenice.jpg" />
+<link rel="canonical" href="" />
+
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <style>
 /* ============================================================
    CONFIG — VARIÁVEIS WHITE-LABEL
-   Altere aqui para reaproveitar o template em outro cliente.
    ============================================================ */
 :root{
-  /* Paleta — tons de verde */
-  --green-900:#0d2818;   /* verde profundo (fundo escuro)  */
+  --green-900:#0d2818;
   --green-800:#143a23;
   --green-700:#1c5236;
   --green-600:#23694a;
-  --green-500:#2f8a63;   /* verde principal / marca        */
+  --green-500:#2f8a63;
   --green-400:#4caf83;
   --green-300:#7fcaa6;
-  --gold:#c9a14a;        /* acento dourado discreto         */
-  --cream:#f5f3ec;       /* fundo claro                     */
+  --gold:#c9a14a;
+  --cream:#f5f3ec;
   --paper:#fbfaf6;
-  --ink:#16241d;         /* texto sobre claro               */
+  --ink:#16241d;
   --ink-soft:#4a5a52;
   --line:rgba(20,58,35,.12);
 
-  /* Tipografia */
-  --font-display:'Fraunces', Georgia, serif;
-  --font-body:'Manrope', system-ui, sans-serif;
+  --font-display:'Inter', system-ui, sans-serif;
+  --font-body:'Inter', system-ui, sans-serif;
 
-  /* Layout */
   --max:1180px;
   --radius:18px;
 }
@@ -61,10 +65,12 @@ body{
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
+body.no-scroll{overflow:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 section{position:relative}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+svg{display:block}
 
 /* utilidades */
 .eyebrow{
@@ -74,9 +80,9 @@ section{position:relative}
 }
 .eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
 h2.title{
-  font-family:var(--font-display);font-weight:600;
-  font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.1;
-  letter-spacing:-.01em;max-width:760px;
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.12;
+  letter-spacing:-.025em;max-width:760px;
 }
 .lead{color:var(--ink-soft);max-width:640px;margin-top:18px;font-size:1.05rem}
 
@@ -89,9 +95,14 @@ header{
 }
 header.scrolled{
   background:rgba(251,250,246,.92);
+  -webkit-backdrop-filter:blur(12px);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
   padding:12px 0;
+}
+/* fallback: navegadores sem backdrop-filter ganham fundo sólido */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  header.scrolled{background:var(--paper)}
 }
 .nav{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:600;color:#fff;transition:.3s}
@@ -107,6 +118,7 @@ header.scrolled .brand{color:var(--green-900)}
 .nav-links a{font-size:.92rem;font-weight:500;color:rgba(255,255,255,.85);transition:.2s}
 header.scrolled .nav-links a{color:var(--ink-soft)}
 .nav-links a:hover{color:var(--gold)}
+.nav-links .btn:hover{color:#fff}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   padding:11px 22px;border-radius:999px;font-weight:600;font-size:.9rem;
@@ -114,10 +126,27 @@ header.scrolled .nav-links a{color:var(--ink-soft)}
   border:1px solid transparent;cursor:pointer;
 }
 .btn:hover{background:var(--green-600);transform:translateY(-2px)}
+.btn .ic{width:18px;height:18px}
 .btn.ghost{background:transparent;border-color:rgba(255,255,255,.35);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
 header.scrolled .btn.ghost{border-color:var(--line);color:var(--green-700)}
-.menu-toggle{display:none;background:none;border:0;cursor:pointer;color:#fff;font-size:1.6rem}
+header.scrolled .btn.ghost:hover{background:var(--green-500);color:#fff;border-color:var(--green-500)}
+
+.menu-toggle,.menu-close{
+  display:none;background:none;border:0;cursor:pointer;color:#fff;
+  width:44px;height:44px;align-items:center;justify-content:center;border-radius:10px;
+}
+.menu-toggle:hover,.menu-close:hover{background:rgba(255,255,255,.1)}
 header.scrolled .menu-toggle{color:var(--green-900)}
+header.scrolled .menu-toggle:hover{background:rgba(20,58,35,.08)}
+
+/* overlay do menu mobile */
+.nav-overlay{
+  position:fixed;inset:0;background:rgba(13,40,24,.55);
+  -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+  opacity:0;visibility:hidden;transition:.3s;z-index:90;
+}
+.nav-overlay.open{opacity:1;visibility:visible}
 
 /* ============================================================
    HERO
@@ -146,13 +175,22 @@ header.scrolled .menu-toggle{color:var(--green-900)}
 .hero-cta{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap}
 .hero-photo{
   aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;
-  background:linear-gradient(160deg,var(--green-700),var(--green-600));
+  background:
+    radial-gradient(120% 90% at 70% 0%, rgba(76,175,131,.25), transparent 60%),
+    linear-gradient(160deg,var(--green-700),var(--green-800));
   border:1px solid rgba(255,255,255,.14);
-  display:grid;place-items:center;text-align:center;
   position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  display:grid;place-items:center;padding:48px;
 }
-.hero-photo span{color:rgba(255,255,255,.5);font-size:.85rem;letter-spacing:.1em;padding:0 20px}
-.hero-photo::before{content:"⚖";font-size:3rem;position:absolute;top:24px;left:24px;opacity:.25}
+.hero-photo::before{
+  content:"";position:absolute;inset:18px;border:1px solid rgba(201,161,74,.35);
+  border-radius:calc(var(--radius) - 8px);pointer-events:none;
+}
+.hero-brand{display:grid;justify-items:center;gap:22px;text-align:center;position:relative;z-index:1}
+.hero-brand img{width:min(58%,190px);height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
+.hero-brand .nm{font-weight:700;font-size:1.3rem;letter-spacing:.02em;color:#fff}
+.hero-brand .rl{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--green-300);font-weight:600}
+.hero-brand .div{width:40px;height:1px;background:var(--gold);margin:2px 0}
 
 /* faixa de números */
 .stats{
@@ -178,7 +216,12 @@ header.scrolled .menu-toggle{color:var(--green-900)}
 .card:hover::before{transform:scaleY(1)}
 .card h3{font-family:var(--font-display);font-size:1.18rem;font-weight:600;margin-bottom:10px}
 .card p{color:var(--ink-soft);font-size:.96rem}
-.card .ico{font-size:1.5rem;margin-bottom:16px;display:block}
+.card .ico{
+  width:48px;height:48px;border-radius:12px;margin-bottom:18px;
+  display:grid;place-items:center;color:var(--green-600);
+  background:rgba(47,138,99,.1);
+}
+.card .ico svg{width:24px;height:24px}
 
 /* ============================================================
    SERVIÇOS
@@ -193,6 +236,12 @@ header.scrolled .menu-toggle{color:var(--green-900)}
   transition:.3s;
 }
 .svc:hover{border-color:var(--green-400);background:rgba(76,175,131,.08)}
+.svc .ico{
+  width:46px;height:46px;border-radius:12px;margin-bottom:18px;
+  display:grid;place-items:center;color:var(--green-300);
+  background:rgba(127,202,166,.12);border:1px solid rgba(127,202,166,.25);
+}
+.svc .ico svg{width:24px;height:24px}
 .svc h3{font-family:var(--font-display);font-size:1.35rem;font-weight:600;margin-bottom:12px}
 .svc p{color:rgba(255,255,255,.74);font-size:.98rem}
 .svc .tag{
@@ -221,22 +270,24 @@ header.scrolled .menu-toggle{color:var(--green-900)}
 #about{background:var(--cream)}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
 .about-photo{
-  aspect-ratio:3/4;border-radius:var(--radius);
+  aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;
   background:linear-gradient(160deg,var(--green-600),var(--green-800));
-  display:grid;place-items:center;color:rgba(255,255,255,.55);text-align:center;
-  border:1px solid var(--line);font-size:.85rem;letter-spacing:.1em;padding:20px;
+  border:1px solid var(--line);
   box-shadow:0 30px 60px -30px rgba(20,58,35,.5);
 }
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
 .about-text h2.title{margin-bottom:24px}
 .about-text p{color:var(--ink-soft);margin-bottom:16px}
 .about-creds{list-style:none;margin:24px 0;display:grid;gap:12px}
 .about-creds li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem}
-.about-creds li::before{content:"✓";color:var(--green-500);font-weight:700}
+.about-creds li svg{width:20px;height:20px;color:var(--green-500);flex:none;margin-top:2px}
 .about-social{display:flex;gap:14px;margin-top:8px}
 .about-social a{
+  display:inline-flex;align-items:center;gap:8px;
   font-size:.88rem;font-weight:600;color:var(--green-700);
   border:1px solid var(--line);padding:8px 16px;border-radius:999px;transition:.2s;
 }
+.about-social a svg{width:18px;height:18px}
 .about-social a:hover{background:var(--green-500);color:#fff;border-color:var(--green-500)}
 
 /* ============================================================
@@ -246,7 +297,11 @@ header.scrolled .menu-toggle{color:var(--green-900)}
 .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:54px}
 #contact .eyebrow{color:var(--green-300)}
 #contact h2.title{color:#fff}
-.contact-item h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-300);margin-bottom:10px}
+.contact-item h4{
+  display:flex;align-items:center;gap:8px;
+  font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-300);margin-bottom:10px;
+}
+.contact-item h4 svg{width:16px;height:16px}
 .contact-item p,.contact-item a{color:rgba(255,255,255,.85);font-size:1rem}
 .contact-item a:hover{color:var(--gold)}
 .contact-cta{
@@ -256,22 +311,24 @@ header.scrolled .menu-toggle{color:var(--green-900)}
 }
 .contact-cta h3{font-family:var(--font-display);font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:600;margin-bottom:14px}
 .contact-cta p{color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 26px}
+.contact-cta .btn{justify-content:center}
 
 /* ============================================================
    FOOTER
    ============================================================ */
 footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:.88rem}
-.foot-links{display:flex;gap:22px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
 .foot-links a:hover{color:var(--gold)}
 
 /* botão flutuante whatsapp */
 .wa-float{
-  position:fixed;right:22px;bottom:22px;z-index:200;
+  position:fixed;right:22px;bottom:22px;z-index:80;
   width:58px;height:58px;border-radius:50%;background:#25d366;
-  display:grid;place-items:center;color:#fff;font-size:1.7rem;
+  display:grid;place-items:center;color:#fff;
   box-shadow:0 12px 28px -8px rgba(0,0,0,.5);transition:.25s;
 }
+.wa-float svg{width:30px;height:30px}
 .wa-float:hover{transform:scale(1.08)}
 
 /* ============================================================
@@ -279,6 +336,10 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
    ============================================================ */
 .reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
 
 /* ============================================================
    RESPONSIVO
@@ -291,15 +352,20 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
   .about-photo{max-width:360px;margin:0 auto}
   .contact-grid{grid-template-columns:repeat(2,1fr)}
   .stats{grid-template-columns:1fr;gap:24px}
+
   .nav-links{
-    position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
+    position:fixed;inset:0 0 0 auto;width:min(82vw,340px);
     background:var(--green-900);flex-direction:column;justify-content:center;
-    gap:28px;transform:translateX(100%);transition:.3s;padding:40px;
+    align-items:flex-start;gap:26px;transform:translateX(100%);transition:transform .3s ease;
+    padding:90px 36px 40px;z-index:95;box-shadow:-20px 0 60px -20px rgba(0,0,0,.6);
   }
   .nav-links.open{transform:none}
-  .nav-links a{color:#fff;font-size:1.1rem}
-  .menu-toggle{display:block}
-  header.scrolled .menu-toggle{color:var(--green-900)}
+  .nav-links a{color:#fff;font-size:1.15rem}
+  header.scrolled .nav-links a{color:#fff}
+  .nav-links .btn{margin-top:8px}
+  .menu-toggle{display:inline-flex}
+  .menu-close{display:inline-flex;position:absolute;top:22px;right:22px;color:#fff}
+  header.scrolled .menu-close{color:#fff}
 }
 @media(max-width:560px){
   .contact-grid{grid-template-columns:1fr}
@@ -317,7 +383,10 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
       <span class="mark">A</span>
       <span>Adenice Araújo<small>Advogada Tributarista</small></span>
     </a>
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links" id="navLinks" aria-label="Menu principal">
+      <button class="menu-close" id="menuClose" aria-label="Fechar menu">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
       <a href="#problems">Situações</a>
       <a href="#services">Serviços</a>
       <a href="#why">Diferenciais</a>
@@ -325,9 +394,12 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
       <a href="#contact">Contato</a>
       <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">Fale comigo</a>
     </nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </header>
+<div class="nav-overlay" id="navOverlay" hidden></div>
 
 <!-- ============================================================
      HERO
@@ -340,18 +412,24 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
         <h1 class="reveal">Pague menos imposto e <em>recupere</em> o que é seu por direito.</h1>
         <p class="sub reveal">Defesa estratégica em execução fiscal, planejamento tributário e recuperação de créditos. Atendimento em São Paulo e em todo o Brasil.</p>
         <div class="hero-cta reveal">
-          <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">Analisar meu caso →</a>
+          <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">
+            Analisar meu caso
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
           <a href="#services" class="btn ghost">Ver áreas de atuação</a>
         </div>
       </div>
 
-      <!-- ESPAÇO RESERVADO PARA FOTO -->
       <div class="hero-photo reveal">
-        <span>Foto da<br>Dra. Adenice Araújo<br><br>(espaço reservado)</span>
+        <div class="hero-brand">
+          <img src="assets/logo.png" alt="Logotipo Adenice Araújo Advocacia" width="190" height="190" loading="eager" />
+          <span class="rl">Advocacia Tributária</span>
+          <span class="nm">Adenice Araújo</span>
+          <span class="div"></span>
+        </div>
       </div>
     </div>
 
-    <!-- números -->
     <div class="stats">
       <div class="stat reveal"><div class="num">7</div><div class="lbl">áreas de atuação tributária</div></div>
       <div class="stat reveal"><div class="num">100%</div><div class="lbl">foco em direito tributário</div></div>
@@ -370,12 +448,30 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
     <p class="lead reveal">Muitos contribuintes pagam impostos indevidos ou aceitam cobranças sem saber que têm direito de contestar, parcelar ou recuperar valores. Identificar a saída legal no tempo certo faz toda a diferença.</p>
 
     <div class="cards">
-      <div class="card reveal"><span class="ico">⚖️</span><h3>Execução fiscal em andamento</h3><p>A Fazenda ajuizou cobrança e há risco de penhora de bens. É possível apresentar defesa, embargos e suspender a exigência.</p></div>
-      <div class="card reveal"><span class="ico">💸</span><h3>Carga tributária elevada</h3><p>Sua empresa paga mais imposto do que deveria por falta de um regime ou planejamento adequado à sua realidade.</p></div>
-      <div class="card reveal"><span class="ico">🔁</span><h3>Créditos a recuperar</h3><p>Tributos pagos a maior ou indevidamente nos últimos anos podem ser recuperados administrativa ou judicialmente.</p></div>
-      <div class="card reveal"><span class="ico">🩺</span><h3>Doença grave e Imposto de Renda</h3><p>Portadores de determinadas doenças têm direito à isenção do IR sobre aposentadoria e pensão — inclusive valores retroativos.</p></div>
-      <div class="card reveal"><span class="ico">🤝</span><h3>Dívida tributária acumulada</h3><p>Débitos com a Receita ou a Fazenda podem ser renegociados via transação tributária, com redução de juros e multas.</p></div>
-      <div class="card reveal"><span class="ico">📊</span><h3>Passivo desorganizado</h3><p>Falta de controle sobre o passivo fiscal gera autuações e surpresas. A gestão correta antecipa riscos e reduz custos.</p></div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7h14M7 7l-3 7a4 4 0 0 0 6 0L7 7Zm10 0-3 7a4 4 0 0 0 6 0l-3-7ZM8 21h8"/></svg></span>
+        <h3>Execução fiscal em andamento</h3><p>A Fazenda ajuizou cobrança e há risco de penhora de bens. É possível apresentar defesa, embargos e suspender a exigência.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>Carga tributária elevada</h3><p>Sua empresa paga mais imposto do que deveria por falta de um regime ou planejamento adequado à sua realidade.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg></span>
+        <h3>Créditos a recuperar</h3><p>Tributos pagos a maior ou indevidamente nos últimos anos podem ser recuperados administrativa ou judicialmente.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></span>
+        <h3>Doença grave e Imposto de Renda</h3><p>Portadores de determinadas doenças têm direito à isenção do IR sobre aposentadoria e pensão — inclusive valores retroativos.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 11a4 4 0 1 0-4-4M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M17 16l2 2 4-4"/></svg></span>
+        <h3>Dívida tributária acumulada</h3><p>Débitos com a Receita ou a Fazenda podem ser renegociados via transação tributária, com redução de juros e multas.</p>
+      </div>
+      <div class="card reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 15l3-4 3 3 5-7"/></svg></span>
+        <h3>Passivo desorganizado</h3><p>Falta de controle sobre o passivo fiscal gera autuações e surpresas. A gestão correta antecipa riscos e reduz custos.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -390,31 +486,37 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
 
     <div class="svc-grid">
       <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/><path d="M9 12l2 2 4-4"/></svg></span>
         <h3>Defesa em Execução Fiscal</h3>
         <p>Atuação técnica em cobranças da Fazenda Pública: embargos à execução, exceção de pré-executividade e medidas para suspender a exigibilidade e proteger o patrimônio.</p>
         <span class="tag">Defesa judicial</span>
       </div>
       <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H3v10h6V11Zm6-6H9v16h6V5Zm6 8h-6v8h6v-8Z"/></svg></span>
         <h3>Planejamento Tributário</h3>
         <p>Estruturação lícita para reduzir a carga tributária da empresa, escolhendo o regime mais vantajoso e organizando operações de forma eficiente e segura.</p>
         <span class="tag">Estratégia preventiva</span>
       </div>
       <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg></span>
         <h3>Recuperação de Créditos</h3>
         <p>Levantamento e recuperação de tributos pagos a maior ou indevidamente, por via administrativa ou judicial, com aproveitamento de valores retroativos.</p>
         <span class="tag">Recuperação de valores</span>
       </div>
       <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A3.5 3.5 0 0 0 12 6 3.5 3.5 0 0 0 2 8.5C2 10.7 3.5 12.5 5 14l7 7 7-7Z"/></svg></span>
         <h3>Isenção de IR por Doença Grave</h3>
         <p>Obtenção da isenção do Imposto de Renda sobre aposentadoria e pensão para portadores de doenças previstas em lei, incluindo a restituição de valores já pagos.</p>
         <span class="tag">Direito do contribuinte</span>
       </div>
       <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h13M8 12h13M8 17h13M3 7h.01M3 12h.01M3 17h.01"/></svg></span>
         <h3>Transação Tributária</h3>
         <p>Negociação de débitos fiscais com a Fazenda por meio de transação, buscando descontos, prazos estendidos e condições compatíveis com a capacidade de pagamento.</p>
         <span class="tag">Renegociação de dívidas</span>
       </div>
       <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.4 9 10 5.2-1.6 9-5 9-10V6l-9-4Z"/><path d="M9 12l2 2 4-4"/></svg></span>
         <h3>Gestão de Passivo &amp; Consultoria</h3>
         <p>Acompanhamento contínuo do passivo tributário e consultoria preventiva para empresas e pessoas físicas, antecipando riscos e orientando decisões.</p>
         <span class="tag">Assessoria contínua</span>
@@ -448,8 +550,9 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
 <section class="section" id="about">
   <div class="wrap">
     <div class="about-grid">
-      <!-- ESPAÇO RESERVADO PARA FOTO -->
-      <div class="about-photo reveal">Foto da Dra. Adenice Araújo<br>(espaço reservado)</div>
+      <div class="about-photo reveal">
+        <img src="assets/adenice.jpg" alt="Adenice Araújo em seu escritório" width="900" height="1125" loading="lazy" />
+      </div>
 
       <div class="about-text">
         <span class="eyebrow reveal">A advogada</span>
@@ -457,14 +560,20 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
         <p class="reveal">Advogada dedicada ao direito tributário, atua na defesa de empresas e pessoas físicas diante do Fisco, unindo rigor técnico e uma visão prática voltada a resultados concretos.</p>
         <p class="reveal">O trabalho combina atuação judicial e administrativa com orientação preventiva, sempre com o objetivo de reduzir a carga tributária, recuperar valores e proteger o patrimônio de cada cliente.</p>
         <ul class="about-creds reveal">
-          <li>Atuação especializada em direito tributário</li>
-          <li>Defesa em execução fiscal e contencioso tributário</li>
-          <li>Planejamento e consultoria para empresas e pessoas físicas</li>
-          <li>Atendimento em São Paulo e em todo o Brasil</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Atuação especializada em direito tributário</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Defesa em execução fiscal e contencioso tributário</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Planejamento e consultoria para empresas e pessoas físicas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Atendimento em São Paulo e em todo o Brasil</li>
         </ul>
         <div class="about-social reveal">
-          <a href="https://www.instagram.com/advogada.adenicearaujo" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.linkedin.com/in/adenicearaújo-advtributarista/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/advogada.adenicearaujo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/adenicearaújo-advtributarista/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9V9Z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
     </div>
@@ -481,19 +590,19 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
 
     <div class="contact-grid">
       <div class="contact-item reveal">
-        <h4>WhatsApp</h4>
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15.5a2 2 0 0 1-2.2 2A19 19 0 0 1 6.5 5.2 2 2 0 0 1 8.5 3h2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1l-1 1a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2v2Z"/></svg>WhatsApp</h4>
         <p><a href="https://wa.me/5511973673304" target="_blank" rel="noopener">+55 11 97367-3304</a></p>
       </div>
       <div class="contact-item reveal">
-        <h4>E-mail</h4>
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>E-mail</h4>
         <p><a href="mailto:denalvesaraujo@gmail.com">denalvesaraujo@gmail.com</a></p>
       </div>
       <div class="contact-item reveal">
-        <h4>Localização</h4>
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Localização</h4>
         <p>São Paulo, SP<br>Atendimento em todo o Brasil</p>
       </div>
       <div class="contact-item reveal">
-        <h4>Redes</h4>
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z"/></svg>Redes</h4>
         <p>
           <a href="https://www.instagram.com/advogada.adenicearaujo" target="_blank" rel="noopener">@advogada.adenicearaujo</a><br>
           <a href="https://www.linkedin.com/in/adenicearaújo-advtributarista/" target="_blank" rel="noopener">LinkedIn</a>
@@ -504,7 +613,10 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
     <div class="contact-cta reveal">
       <h3>Tem uma dúvida ou cobrança do Fisco?</h3>
       <p>Envie uma mensagem e receba uma primeira avaliação do seu caso. Quanto antes você agir, maiores as chances de reverter ou reduzir o que está sendo cobrado.</p>
-      <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">Falar no WhatsApp →</a>
+      <a href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." class="btn" target="_blank" rel="noopener">
+        Falar no WhatsApp
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -525,7 +637,9 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
 </footer>
 
 <!-- WhatsApp flutuante -->
-<a class="wa-float" href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+<a class="wa-float" href="https://wa.me/5511973673304?text=Ol%C3%A1%2C%20gostaria%20de%20analisar%20meu%20caso%20tribut%C3%A1rio." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.69-6.16a11.86 11.86 0 0 1-1.6-5.96C.15 5.32 5.5 0 12.06 0a11.8 11.8 0 0 1 8.41 3.49 11.8 11.8 0 0 1 3.48 8.41c0 6.55-5.34 11.89-11.89 11.89a11.9 11.9 0 0 1-5.69-1.45L.06 24Zm6.6-3.8c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.88-4.43 9.88-9.88 0-5.46-4.43-9.89-9.88-9.89S2.18 6.45 2.18 11.9c0 2.23.65 3.9 1.74 5.65l-1 3.65 3.74-1Zm11.39-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.69.25-1.29.18-1.41Z"/></svg>
+</a>
 
 <!-- ============================================================
      SCRIPTS
@@ -535,20 +649,41 @@ footer{background:#0a1f12;color:rgba(255,255,255,.6);padding:40px 0}
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
-  });
+  }, { passive: true });
 
-  // menu mobile
-  const toggle = document.getElementById('menuToggle');
-  const links  = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  // menu mobile — abrir/fechar com overlay, ESC e trava de scroll
+  const toggle  = document.getElementById('menuToggle');
+  const closeBt = document.getElementById('menuClose');
+  const links   = document.getElementById('navLinks');
+  const overlay = document.getElementById('navOverlay');
+
+  function openMenu(){
+    links.classList.add('open');
+    overlay.hidden = false;
+    requestAnimationFrame(() => overlay.classList.add('open'));
+    document.body.classList.add('no-scroll');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu(){
+    links.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+    toggle.setAttribute('aria-expanded', 'false');
+    setTimeout(() => { overlay.hidden = true; }, 300);
+  }
+
+  toggle.addEventListener('click', openMenu);
+  closeBt.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && links.classList.contains('open')) closeMenu(); });
 
   // reveal on scroll
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  }, { threshold:.12 });
-  document.querySelectorAll('.reveal').forEach((el,i) => {
-    el.style.transitionDelay = (i % 6 * 0.06) + 's';
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = ((i % 6) * 0.06) + 's';
     io.observe(el);
   });
 
